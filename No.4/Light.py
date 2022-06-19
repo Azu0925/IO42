@@ -44,7 +44,7 @@ class Light:
           self.is_pushing = True
         else:
           print('##')
-          self.off_delay_timer = time.time() + off_delay_time
+          self.on_delay_timer = time.time() + on_delay_time
           self.is_pushing = True
       else:
         print('--')
@@ -56,7 +56,7 @@ class Light:
 
     if self.on_delay_timer is not None:
       if self.on_delay_timer <= time.time():
-        self.light_state = True
+        self.light_state = not self.light_state
         self.on_delay_timer = None
 
     if self.off_delay_timer is not None:
