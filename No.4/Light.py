@@ -1,6 +1,7 @@
 import time
 
-class Light:
+class Light: 
+
   def __init__(self, led_pin, light_state, switch_state):
     self.LED_PIN = led_pin
     self.light_state = light_state
@@ -44,6 +45,8 @@ class Light:
       self.off_delay_timer = time.time() + off_delay_time
       self.is_pushing = True
       self.on_delay_timer = None
+    elif self.switch_state == 0 and self.is_pushing == True:
+      pass
     else:
       self.is_pushing = False
 
