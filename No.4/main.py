@@ -1,10 +1,10 @@
 import RPi.GPIO as GPIO
 import Light
 
-LEDPIN_BLUE = 26
-LEDPIN_RED = 6
-LEDPIN_YELLOW = 5
-SWITCH_PIN = 16
+LEDPIN_BLUE = 23 #26
+LEDPIN_RED = 24 #6
+LEDPIN_YELLOW = 25 #5
+SWITCH_PIN = 22 #16
 on_delay = 0
 off_delay = 0
 
@@ -12,7 +12,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(LEDPIN_BLUE, GPIO.OUT)
 GPIO.setup(LEDPIN_RED, GPIO.OUT)
 GPIO.setup(LEDPIN_YELLOW, GPIO.OUT)
-GPIO.setup(SWITCH_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(SWITCH_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 blue_led = Light.Light(LEDPIN_BLUE, False, 1)
 red_led = Light.Light(LEDPIN_RED, False, 1)
 yellow_led = Light.Light(LEDPIN_YELLOW, False, 1)
