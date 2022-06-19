@@ -47,7 +47,7 @@ class Light:
     elif self.switch_state == 1 and self.is_pushing == True:
       print('--')
       pass
-    elif self.switch_state == 0:
+    elif self.switch_state == 0 and self.is_pushing == True:
       print('離した')
       self.is_pushing = False
 
