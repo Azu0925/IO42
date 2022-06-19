@@ -2,10 +2,10 @@ import RPi.GPIO as GPIO
 import time
 import Light
 
-LEDPIN_BLUE = 23 #26
-LEDPIN_RED = 24 #6
-LEDPIN_YELLOW = 25 #5
-SWITCH_PIN = 22 #16
+LEDPIN_BLUE = 23 
+LEDPIN_RED = 24 
+LEDPIN_YELLOW = 25 
+SWITCH_PIN = 22 
 on_delay = 0
 off_delay = 0
 
