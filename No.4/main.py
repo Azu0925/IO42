@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import time
 import Light
 
 LEDPIN_BLUE = 23 #26
@@ -20,6 +21,7 @@ yellow_led = Light.Light(LEDPIN_YELLOW, False, 1)
 
 try:
   while True:
+    time.sleep(0.1)
     blue_led.switch_state = GPIO.input(SWITCH_PIN)
     red_led.switch_state = GPIO.input(SWITCH_PIN)
     yellow_led.switch_state = GPIO.input(SWITCH_PIN)
