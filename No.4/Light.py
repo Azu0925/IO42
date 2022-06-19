@@ -40,22 +40,16 @@ class Light:
     if self.switch_state == 0 and self.is_pushing == False and self.light_state == False:
       self.on_delay_timer = time.time() + on_delay_time 
       self.is_pushing = True
-      self.off_delay_timer = None
     elif self.switch_state == 0 and self.is_pushing == False and self.light_state == True:
-      self.off_delay_timer = time.time() + off_delay_time
+      self.on_delay_timer = time.time() + on_delay_time
       self.is_pushing = True
-      self.on_delay_timer = None
     elif self.switch_state == 0 and self.is_pushing == True:
       pass
-    else:
+    elif self.switch_state == 1 and self.is_pushing == True:
       self.is_pushing = False
 
     if self.on_delay_timer is not None:
       if self.on_delay_timer <= time.time():
-        self.light_state = True
-
-    if self.off_delay_timer is not None:
-      if self.off_delay_timer <= time.time():
-        self.light_state = False
-
-    
+        self.light_state = not self.light_state
+        self.on_delay_timer = None
+        print(self.on_delay_timer) 
