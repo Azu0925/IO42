@@ -1,3 +1,5 @@
+# 42_yamanekota_ALTMOM_2
+
 import time
 
 class Light: 
