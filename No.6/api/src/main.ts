@@ -3,7 +3,7 @@ import { response } from './types/response'
 import { controller } from './controller'
 
 function doPost(e: any): GoogleAppsScript.Content.TextOutput {
-  const req: request = JSON.parse(e.poostData.contents)
+  const req: request = JSON.parse(e.postData.contents)
   const res: response = controller(req)
 
   return createResponse(res)

@@ -14,5 +14,5 @@ export const controller = (req: request): response => {
 
 function base64Decode(data: string): Buffer {
   const fileData = data.replace(/^data:\w+\/\w+;base64,/, '')
-  return new Buffer(fileData, 'base64')
+  return Buffer.from(fileData, 'base64')
 }
