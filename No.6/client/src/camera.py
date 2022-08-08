@@ -1,8 +1,6 @@
-import cv2
 import datetime
 
-def record(file_path):
-    cap = cv2.VideoCapture(0)
+def record(file_path, cv2, cap):
     fmt = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
     fps = 20.0
     size = (640, 360)
@@ -18,5 +16,3 @@ def record(file_path):
             break
     
     writer.release()
-    cap.release()
-    cv2.destroyAllWindows()
