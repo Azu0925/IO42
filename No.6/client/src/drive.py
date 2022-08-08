@@ -31,4 +31,4 @@ def upload(file_path, file_name):
     except HTTPError as error:
         print(F'An error occurred: {error}')
         file = None
-    return file.get('id')
+    return 'https://drive.google.com/file/d/' + str(file.get('id'))

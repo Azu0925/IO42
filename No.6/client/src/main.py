@@ -3,10 +3,12 @@ import os
 import datetime
 import camera
 import cv2
+import notification
 
 def main():
     base = os.path.dirname(os.path.abspath(__file__))
     file_name = 'test_' + str(datetime.datetime.now()) + '.m4v'
+    file_name = 'sample.m4v'
     file_info = os.path.normpath(os.path.join(base, '../video/' + file_name))
 
     cap = cv2.VideoCapture(0)
@@ -17,7 +19,7 @@ def main():
     DOT_TH = 20
     MOTION_FACTOR_TH = 0.20
     avg = None
-    
+
     while True:
         _, frame = cap.read()
         motion_detected = False
@@ -45,8 +47,9 @@ def main():
             camera.record(file_info, cv2, cap)
 
             # upload to Google drive
-            drive.upload(file_info, file_name)
+            url = drive.upload(file_info, file_name)
             print("log: movie upload done")
+            notification.discord(url)
 
         cv2.imshow('camera', frame)
 
@@ -56,9 +59,6 @@ def main():
 
     cap.release()
     cv2.destroyAllWindows()
-
-    #camera.record(file_info)
-
 
 if __name__ == '__main__':
     main()
