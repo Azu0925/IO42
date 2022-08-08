@@ -51,8 +51,6 @@ def main():
             print("log: movie upload done")
             notification.discord(url)
 
-        cv2.imshow('camera', frame)
-
         k = cv2.waitKey(1000)
         if k == 27:
             break
