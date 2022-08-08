@@ -169,3 +169,4 @@ cython_debug/
 
 token.json
 client_secrets.json
+video/
