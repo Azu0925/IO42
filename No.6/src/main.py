@@ -8,7 +8,6 @@ import notification
 def main():
     base = os.path.dirname(os.path.abspath(__file__))
     file_name = 'test_' + str(datetime.datetime.now()) + '.m4v'
-    file_name = 'sample.m4v'
     file_info = os.path.normpath(os.path.join(base, '../video/' + file_name))
 
     cap = cv2.VideoCapture(0)
